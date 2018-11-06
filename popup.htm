@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Active Tabs</title>
+	<link rel="stylesheet" href="assets/popup.css" type="text/css" media="all" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+	<div id="tools">
+		<input class="search tab" placeholder="Search active tabs... ? to toggle help" />
+		<span class="expand">Expand All</span>
+		|
+		<span class="collapse">Collapse All</span>
+	</div>
+	<div id="content">
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/popup.js"></script>
+
+	<div id="confirm" class="modal-box">
+		<header>
+			<a href="#" class="js-modal-close close">×</a>
+			<h3>Confirm</h3>
+		</header>
+		<div class="modal-body">
+			<p>Are you sure you want to close the following:</p>
+			<p id="name"></p>
+		</div>
+		<footer>
+			<a href="#" class="btn js-modal-close">Cancel</a>
+			<a href="#" class="btn js-modal-confirm">Close <span id="type">Tab</span></a>
+		</footer>
+	</div>
+	<div id="help" class="modal-box">
+		<header>
+			<a href="#" class="js-modal-close close">×</a>
+			<h3>
+				<span class="help_tab active" data-tab="keys">Keyboard Shortcuts</span>
+				&nbsp;|&nbsp;
+				<span class="help_tab" data-tab="tips">Tips</span>
+				&nbsp;|&nbsp;
+				<span class="help_tab" data-tab="keywords">Keywords</span>
+			</h3>
+		</header>
+		<div class="modal-body">
+			<table class="help_tabs" id="help_tab_keys">
+				<tr>
+					<th>ENTER</th>
+					<td>jump to the highlighted tab</td>
+				</tr>
+				<tr>
+					<th>ARROW UP</th>
+					<td>select previous tab, will loop to end</td>
+				</tr>
+				<tr>
+					<th>ARROW DOWN</th>
+					<td>select next tab, will loop to beginning</td>
+				</tr>
+				<tr>
+					<th>S</th>
+					<td>jump to the search box, can minimize tab results this way</td>
+				</tr>
+				<tr>
+					<th>X</th>
+					<td>close overlays, esc seems to be reserved</td>
+				</tr>
+				<tr>
+					<th>C</th>
+					<td>close the highlighted tab, will prompt for confirmation</td>
+				</tr>
+				<tr>
+					<th>M</th>
+					<td>mute/unmute the highlighted tab</td>
+				</tr>
+				<tr>
+					<th>P</th>
+					<td>pin/unpin the highlighted tab</td>
+				</tr>
+				<tr>
+					<th>?</th>
+					<td>will open/close this popup</td>
+				</tr>
+			</table>
+			<div class="help_tabs" id="help_tab_tips" style="display:none;">
+				<ol>
+					<li>Using the search box you can quickly narrow your tab list down.</li>
+					<li>Searching for <span class="help_tab" data-tab="keywords">keywords</span> can help narrow it further</li>
+				</ol>
+			</div>
+			<table class="help_tabs" id="help_tab_keywords" style="display:none;">
+				<tr>
+					<th>_audio</th>
+					<td>will show all tabs currently playing audio</td>
+				</tr>
+				<tr>
+					<th>_muted</th>
+					<td>will show all muted tabs</td>
+				</tr>
+				<tr>
+					<th>_pinned</th>
+					<td>will show all pinned tabs</td>
+				</tr>
+				<tr>
+					<th>_highlighted</th>
+					<td>will show all highlighted tabs</td>
+				</tr>
+				<tr>
+					<th>_incognito</th>
+					<td>will show all incognito tabs</td>
+				</tr>
+				<tr>
+					<th></th>
+					<td class="notes">NOTE: searching for keywords will also show any tab which meets the search criteria, its not perfect, click a keyword for an example.</td>
+				</tr>
+			</table>
+		</div>
+		<footer>
+			<a href="#" class="btn js-modal-confirm">Close</a>
+		</footer>
+	</div>
+</body>
+</html>
