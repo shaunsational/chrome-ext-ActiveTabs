@@ -51,7 +51,7 @@ function drawTabs() {
 				modifiers += (tab.highlighted) ? ' _highlighted' : '';
 				modifiers += (tab.incognito) ? ' _incognito' : '';
 				html += '<li class="tab'+ modifiers +'" data-window-id="'+ window +'" data-tab-id="'+ tab.id +'" data-muted="'+ tab.muted +'" data-pinned="'+ tab.pinned +'" data-search="'+ tab.title.toLowerCase() +' '+ tab.url.toLowerCase() + modifiers +'">'
-				+ '<span class="icon"><span style="background-image:url(chrome://favicon/'+ tab.url +');"></span></span>'
+				+ '<span class="icon"><span style="background-image:url('+ tab.icon +');"></span></span>'
 				+ '<span class="title">'+ tab.title +'</span>'
 				+ '<span class="url">'+ tab.url +'</span>'
 				+ '<img src="assets/close.png" class="close_tab" data-tab-id="'+ tab.id +'" data-tab-name="'+ tab.title +'" alt="" />'

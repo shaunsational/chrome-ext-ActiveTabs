@@ -1,6 +1,6 @@
 var countTabs = function() {
 	chrome.tabs.query({},function(tabs){
-		chrome.browserAction.setBadgeText( { text:tabs.length.toString() } );
+		chrome.action.setBadgeText( { text:tabs.length.toString() } );
 	});
 }
 
